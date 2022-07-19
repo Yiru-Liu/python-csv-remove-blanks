@@ -1,20 +1,21 @@
 import csv
 
-with open('input.csv', newline='', encoding='utf-8-sig') as r, open('output.csv', 'w', newline='') as w:
+with open('input.csv', newline='', encoding='utf-8-sig') as r, open('output.csv', 'w', newline='', encoding='utf-8') as w:
     reader = csv.reader(r)
     writer = csv.writer(w)
     output = []
     for row in reader:
-        print(row)
+        # print(row)
         if all('' == s or s.isspace() for s in row):
-            print('true')
+            # print('true')
+            pass
         else:
-            print('false')
+            # print('false')
             output.append(row)
 
-    print('')
-    for row in output:
-        print(row)
+    # print('')
+    # for row in output:
+    #     print(row)
 
     blankColumns = []
     allBlank = True
@@ -29,12 +30,12 @@ with open('input.csv', newline='', encoding='utf-8-sig') as r, open('output.csv'
             # print('allBlank = False')
             allBlank = True
 
-    print(blankColumns)
+    # print(blankColumns)
 
     nonBlankIndices = range(0, len(output[0]))
     nonBlankIndices = [x for x in nonBlankIndices if x not in blankColumns]
 
-    print(nonBlankIndices)
+    # print(nonBlankIndices)
 
     finalOutput = []
     for row in output:
@@ -44,7 +45,7 @@ with open('input.csv', newline='', encoding='utf-8-sig') as r, open('output.csv'
         finalOutput.append(finalRow)
 
     for row in finalOutput:
-        print(row)
+        # print(row)
         writer.writerow(row)
 
 
