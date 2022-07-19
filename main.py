@@ -1,6 +1,6 @@
 import csv
 
-with open('test dummy.csv', newline='', encoding='utf-8-sig') as r, open('removed.csv', 'w', newline='') as w:
+with open('input.csv', newline='', encoding='utf-8-sig') as r, open('output.csv', 'w', newline='') as w:
     reader = csv.reader(r)
     writer = csv.writer(w)
     output = []
