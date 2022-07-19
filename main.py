@@ -31,7 +31,21 @@ with open('test dummy.csv', newline='', encoding='utf-8-sig') as r, open('remove
 
     print(blankColumns)
 
-    nonBlankIndices = range(0, len(output))
+    nonBlankIndices = range(0, len(output[0]))
     nonBlankIndices = [x for x in nonBlankIndices if x not in blankColumns]
+
+    print(nonBlankIndices)
+
+    finalOutput = []
+    for row in output:
+        finalRow = []
+        for i in nonBlankIndices:
+            finalRow.append(row[i])
+        finalOutput.append(finalRow)
+
+    for row in finalOutput:
+        print(row)
+        writer.writerow(row)
+
 
     w.close()
